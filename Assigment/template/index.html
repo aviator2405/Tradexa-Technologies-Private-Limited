@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradexa Technologies Private Limited</title>
+    <link rel="stylesheet" href="/static/style2.css">  
+</head>
+<body>
+    <header>
+        <h1 id="header-heading">
+            Tradexa Technologies Private Limited
+        </h1>
+    </header>
+    <h1 id="welcomeHeading">Welcome to Databases updation system</h1>
+    <form id="uploadForm" method="post" enctype="multipart/form-data" onsubmit="uploadFile(event)">
+        {% csrf_token %}
+        <label for="file" style="font-size: 20px;"><b>USERS</b></label>
+        <input type="file" name="usersfile" id="file" accept=".csv, .xlsx" required>
+        
+        <label for="file" style="font-size: 20px;"><b>ORDERS:</b></label>
+        <input type="file" name="orderfile" id="file" accept=".csv, .xlsx" required>
+
+        <label for="file" style="font-size: 20px;"><b>PRODUCTS</b></label>
+        <input type="file" name="productfile" id="file" accept=".csv, .xlsx" required>
+
+        <button type="submit" id="application_link">STORE IN DATABASE</button>
+        <button type="reset" id="application_link_reset">Reset</button>
+    </form>
+
+     <!-- Loader container -->
+     <div id="loaderContainer" class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <script src="static/handler.js"></script>
+</body>
+</html>
